@@ -27,7 +27,7 @@ const carsController = {
   getBrands: async (req, res) => {
     try {
       const [rows, fields] = await pool.query(
-        "SELECT * FROM car_brands group by title"
+        "SELECT title FROM car_brands group by title"
       );
       res.json({ data: rows });
     } catch (error) {
