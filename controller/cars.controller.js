@@ -5,7 +5,7 @@ const carsController = {
       const [rows, fields] = await pool.query("SELECT * FROM car_types");
       res.json({ data: rows });
     } catch (error) {
-      console.log(err);
+      console.log(error);
       res.json({
         status: "error",
       });
@@ -18,7 +18,7 @@ const carsController = {
       );
       res.json({ data: rows });
     } catch (error) {
-      console.log(err);
+      console.log(error);
       res.json({
         status: "error",
       });
@@ -31,7 +31,7 @@ const carsController = {
       );
       res.json({ data: rows });
     } catch (error) {
-      console.log(err);
+      console.log(error);
       res.json({
         status: "error",
       });
@@ -46,7 +46,7 @@ const carsController = {
       );
       res.json({ data: rows });
     } catch (error) {
-      console.log(err);
+      console.log(error);
       res.json({
         status: "error",
       });
@@ -61,7 +61,7 @@ const carsController = {
       );
       res.json({ data: rows });
     } catch (error) {
-      console.log(err);
+      console.log(error);
       res.json({
         status: "error",
       });
@@ -76,7 +76,7 @@ const carsController = {
       );
       res.json({ data: rows });
     } catch (error) {
-      console.log(err);
+      console.log(error);
       res.json({
         status: "error",
       });
@@ -92,7 +92,7 @@ const carsController = {
       );
       res.json({ data: rows });
     } catch (error) {
-      console.log(err);
+      console.log(error);
       res.json({
         status: "error",
       });
@@ -107,7 +107,7 @@ const carsController = {
       );
       res.json({ data: rows });
     } catch (error) {
-      console.log(err);
+      console.log(error);
       res.json({
         status: "error",
       });
@@ -122,7 +122,7 @@ const carsController = {
       );
       res.json({ data: rows });
     } catch (error) {
-      console.log(err);
+      console.log(error);
       res.json({
         status: "error",
       });
@@ -138,7 +138,7 @@ const carsController = {
       );
       res.json({ data: rows });
     } catch (error) {
-      console.log(err);
+      console.log(error);
       res.json({
         status: "error",
       });
@@ -153,7 +153,7 @@ const carsController = {
       );
       res.json({ data: rows });
     } catch (error) {
-      console.log(err);
+      console.log(error);
       res.json({
         status: "error",
       });
@@ -168,7 +168,7 @@ const carsController = {
       );
       res.json({ data: rows });
     } catch (error) {
-      console.log(err);
+      console.log(error);
       res.json({
         status: "error",
       });
@@ -353,8 +353,8 @@ const carsController = {
       const [rows, fields] = await pool.query(sql, arr_val);
 
       res.json({ data: rows });
-    } catch (err) {
-      console.log(err);
+    } catch (error) {
+      console.log(error);
       res.json({
         status: "error",
       });
