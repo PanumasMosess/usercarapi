@@ -6,7 +6,7 @@ const carsController = require("../controller/cars.controller");
 router.get("/", carsController.getAllType);
 router.get("/carGear", carsController.getAllGear);
 router.get("/brands", carsController.getBrands);
-router.get("/brands/:car_type_id", carsController.getBrandsByType);
+router.get("/brand/:car_type_id", carsController.getBrandsByType);
 router.get("/models/:brand_id", carsController.getModelsByBrand);
 router.get("/submodels/:model_id", carsController.getSubModelsByModel);  
 router.get("/carGearBrand/:brand_id", carsController.getAllGearByBrand); 
