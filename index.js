@@ -10,16 +10,16 @@ const tokenRouter = require("./routes/apiToken.route");
 
 app.use(
   cors({
-    origin: "*",
+    origin: "*,*,*,*",
     methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"],
   })
 );
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-app.use("/api", cors(), jwtValidate, carsRouter);
-app.use("/authToken", cors(), tokenRouter);
-app.use("/refirshToken", cors(), jwtRefreshTokenValidate, tokenRouter);
+app.use("/api", jwtValidate, carsRouter);
+app.use("/authToken", tokenRouter);
+app.use("/refirshToken", jwtRefreshTokenValidate, tokenRouter);
 
 const PORT = process.env.PORT || 3000;
 
