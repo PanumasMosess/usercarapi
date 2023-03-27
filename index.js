@@ -2,23 +2,24 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 
-require('dotenv').config()
+require("dotenv").config();
 
-const {jwtValidate, jwtRefreshTokenValidate} = require('./token/jwtValidate')
-const carsRouter = require('./routes/cars.route')
-const tokenRouter = require('./routes/apiToken.route')
+const { jwtValidate, jwtRefreshTokenValidate } = require("./token/jwtValidate");
+const carsRouter = require("./routes/cars.route");
+const tokenRouter = require("./routes/apiToken.route");
 
-app.use(cors({
-  origin: '*, *',
-  methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
-}));
+app.use(
+  cors({
+    origin: "*",
+    methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"],
+  })
+);
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-app.use("/api", jwtValidate , carsRouter);
-app.use("/authToken", tokenRouter);
-app.use("/refirshToken",jwtRefreshTokenValidate, tokenRouter);
-
+app.use("/api", cors(), jwtValidate, carsRouter);
+app.use("/authToken", cors(), tokenRouter);
+app.use("/refirshToken", cors(), jwtRefreshTokenValidate, tokenRouter);
 
 const PORT = process.env.PORT || 3000;
 
