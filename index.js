@@ -8,7 +8,10 @@ const {jwtValidate, jwtRefreshTokenValidate} = require('./token/jwtValidate')
 const carsRouter = require('./routes/cars.route')
 const tokenRouter = require('./routes/apiToken.route')
 
-app.use(cors({origin: `*`}));
+app.use(cors({
+  origin: '*',
+  methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
+}));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
