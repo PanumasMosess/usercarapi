@@ -10,7 +10,7 @@ const tokenRouter = require("./routes/apiToken.route");
 
 app.use(
   cors({
-    origin: "*,*,*,*",
+    origin: ["*"],
     methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"],
   })
 );
