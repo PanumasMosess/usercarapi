@@ -9,7 +9,7 @@ const carsRouter = require('./routes/cars.route')
 const tokenRouter = require('./routes/apiToken.route')
 
 app.use(cors({
-  origin: '*',
+  origin: '*, *',
   methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
 }));
 app.use(express.urlencoded({ extended: false }));
